@@ -30,7 +30,7 @@
 	<target name="compile" description="compile the Java source code to class files" depends="ivy-retrieve">
 		<mkdir dir="${classes.dir}" />
 		<mkdir dir="${runtime.lib.dir}"/>
-		<javac target="1.6" srcdir="${src.dir}" destdir="${classes.dir}" classpathref="build.class.path" />
+		<javac target="1.6" source="1.6" srcdir="${src.dir}" destdir="${classes.dir}" classpathref="build.class.path" />
 	</target>
 
 	<!-- IVY -->
