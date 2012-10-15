@@ -25,8 +25,8 @@ public class JpaTestServlet extends HttpServlet {
 		ServletOutputStream out = resp.getOutputStream();
 		EntityManager em = emf.createEntityManager();
 		try {
-		    Guard k = em.find(Guard.class, 1);
-		    out.println("Guard " + k.getId() + ": " + k.getName());
+		    Guard g = em.find(Guard.class, 1);
+		    out.println("Guard " + g.getId() + ": " + g.getName());
 		}
 		finally {
 		    em.close();
