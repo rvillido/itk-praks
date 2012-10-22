@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ee.itcollege.i377.praktikum4.entities.Guard;
 
-@WebServlet("/jpaTestServlet")
+//@WebServlet("/jpaTestServlet")
 public class JpaTestServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -27,12 +27,24 @@ public class JpaTestServlet extends HttpServlet {
 		try {
 		    Guard g = em.find(Guard.class, 1);
 		    out.println("Guard " + g.getId() + ": " + g.getName());
+		    g.setName("Test");
+		    em.getTransaction().begin();
+		    em.persist(g);
+		    em.getTransaction().commit();
+		    g = em.find(Guard.class, 1);
+		    out.println("Guard " + g.getId() + ": " + g.getName());
+		    
 		}
 		finally {
 		    em.close();
 		} 
 	}
 	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getParameter("name");
+	}
+
 	@Override
 	public void destroy() {
 	    emf.close();
