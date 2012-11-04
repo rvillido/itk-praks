@@ -31,7 +31,9 @@ public class GuardDaoImpl implements GuardDao{
 	
 	public void save(Guard guard) {
 		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
 		em.persist(guard);
+		em.getTransaction().commit();
 	}
 
 }

@@ -27,12 +27,12 @@ public class JpaTestServlet extends HttpServlet {
 		try {
 		    Guard g = em.find(Guard.class, 1);
 		    out.println("Guard " + g.getId() + ": " + g.getName());
-		    g.setName("Test");
 		    em.getTransaction().begin();
+		    g.setName("Jaan");
 		    em.persist(g);
 		    em.getTransaction().commit();
-		    g = em.find(Guard.class, 1);
-		    out.println("Guard " + g.getId() + ": " + g.getName());
+		    Guard g2 = em.find(Guard.class, 1);
+		    out.println("Guard 2a " + g2.getId() + ": " + g2.getName());
 		    
 		}
 		finally {
