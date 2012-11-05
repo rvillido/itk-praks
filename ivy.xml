@@ -34,8 +34,13 @@
 		<dependency org="org.springframework" name="org.springframework.web.servlet" rev="3.1.2.RELEASE" conf="source,runtime->default" />
  		<dependency org="cglib" name="cglib" rev="2.2.2" conf="runtime->default" /> 
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.10" conf="runtime->default" />
+		
+		<!-- Spring Security -->
+		<dependency org="org.springframework.security" name="spring-security-core" rev="3.1.2.RELEASE" conf="source,runtime->default"/>
+		<dependency org="org.springframework.security" name="spring-security-config" rev="3.1.2.RELEASE" conf="source,runtime->default"/>
+		<dependency org="org.springframework.security" name="spring-security-web" rev="3.1.2.RELEASE" conf="source,runtime->default"/>
  		
- 		<!-- Logimine (pole otseselt vajalik) -->
+ 		<!-- Logimine -->
  		<dependency org="log4j" name="log4j" rev="1.2.17" conf="source,runtime->default" />
 	</dependencies>
 </ivy-module>

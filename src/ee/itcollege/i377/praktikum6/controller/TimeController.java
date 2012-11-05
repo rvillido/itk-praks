@@ -33,4 +33,10 @@ public class TimeController {
 		model.addAttribute("timeTillTheEnd", new Date(4449546671000L));
 		return "main";
 	}
+	
+	@RequestMapping(value = "/")
+	public String main(Model model) {
+		model.addAttribute("timeTillTheEnd", new Date(4449546671000L));
+		return "main";
+	}
 }
